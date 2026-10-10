@@ -1,0 +1,441 @@
+/* Importé una fuente personal por fuera de Google Fonts */
+@font-face {
+    font-family: "Nyght Serif";
+    font-weight: 400;
+    font-style: normal;
+    src: url(./fonts/NyghtSerif-Regular.woff2);
+}
+@font-face {
+    font-family: "Nyght Serif";
+    font-weight: 300;
+    font-style: italic;
+    src: url(./fonts/NyghtSerif-LightItalic.woff2);
+}
+@font-face {
+    font-family: "Nyght Serif";
+    font-weight: 500;
+    font-style: italic;
+    src: url(./fonts/NyghtSerif-MediumItalic.woff2);
+}
+@font-face {
+    font-family: "Nyght Serif";
+    font-weight: 700;
+    font-style: italic;
+    src: url(./fonts/NyghtSerif-BoldItalic.woff2);
+}
+
+/* Ajusté para que 1rem = 10px, para más comodidad de trabajo */
+html {
+    font-size: 62.5%
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    color: var(--verde-oscuro);
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* -----------------------------VARIABLES de texto y color---------------------------
+Investigué por mi cuenta cómo armar variables para facilitarme el trabajo, porque estoy acostumbrada a usarlas en Figma :) */
+:root {
+    /* Variables tipográficas 
+    --nombre: estilo peso tamaño/interlinea "Tipografia", alternativa;*/
+
+    --titulo-1: normal 400 4.7rem/1.2 "Nyght Serif", serif;
+    --bajada-1: normal 300 2rem/1.2 "Raleway", sans-serif;
+    --titulo-2: normal 400 3rem/1.1 "Nyght Serif", serif;
+    --bajada-2: normal 600 1.5rem/1.2 "Raleway", sans-serif;
+    --titulo-3: normal 400 2rem/1.3 "Nyght Serif", serif;
+    --bajada-3: normal 500 1.2rem/1.3 "Raleway", sans-serif;
+
+    --destacado: italic 300 4rem/1.2 "Nyght Serif", serif;
+    --texto-lectura: normal 400 1.1rem/1.2 "Raleway", sans-serif;
+    --epigrafes: normal 300 1.2rem/1.2 "Raleway", sans-serif;
+    --botones: normal 400 1.8rem/1.2 "Raleway", sans-serif;
+    --breadcrumb: normal 400 1rem/1.2 "Raleway", sans-serif;
+
+    /* Variables de color */
+    --blanco: #FFFDF3;
+
+    --verde-oscuro: #394E30;
+    --verde-medio: #648057;
+    --verde-claro1: #A6B37D;
+    --verde-claro2: #E1EBC1;
+
+    --rosa-oscuro: #A1493D;
+    --rosa-medio: #DF8073;
+    --rosa-claro1: #F0B49D;
+    --rosa-claro2: #F9E7E0;
+}
+
+/* estilos generales de texto */
+h1 {
+    font: var(--titulo-1)
+}
+h2 {
+    font: var(--titulo-2);
+}
+h3 {
+    font: var(--titulo-3);
+}
+p {
+    font: var(--texto-lectura);
+}
+.titulo-1 {
+    font: var(--titulo-1);
+}
+.titulo-2 {
+    font: var(--titulo-2);
+}
+.titulo-3 {
+    font: var(--titulo-3);
+}
+.destacado {
+    font: var(--destacado);
+}
+.bajada-1 {
+    font: var(--bajada-1);
+}
+.bajada-2 {
+    font: var(--bajada-2);
+}
+.bajada-3 {
+    font: var(--bajada-3);
+}
+.epigrafe {
+    font: var(--epigrafes);
+}
+.breadcrumb {
+    font: var(--breadcrumb);
+}
+
+
+/* -----------------estilos grales de elementos comunes---------------------- */
+
+/* contenedor gral de sección */
+.seccion {
+    padding: 4rem 2.4rem;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 1.6rem;
+    height: 100vh;
+}
+
+/* contenedores de jerarquías de texto (titulo + bajada), para sostener espaciados y estructura consistentes */
+.jerarquia {
+    grid-column: span 12;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.jerarquia-titulo2 {
+    gap: 10px;
+}
+.jerarquia-titulo3 {
+    gap: 10px;
+
+    .linea {
+        width: 50px;
+        height: 2px;
+        background-color: var(--rosa-medio);
+        border-radius: 20px;
+    }
+
+    h3 {
+        color: var(--rosa-medio);
+    }
+}
+
+/* botón base */
+.boton {
+    /* estructura */
+    padding: 7px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    justify-self: start;
+    white-space: nowrap;
+    height: max-content;
+    border-radius: 21px;
+
+    /* estilo */
+    font: var(--botones);
+    color: var(--verde-oscuro);
+    background-color: var(--verde-claro1);
+    border: 1px solid var(--verde-oscuro);
+    box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.25);
+
+    /* comportamiento */
+    cursor: pointer;
+}
+.boton:hover {
+    background-color: var(--verde-medio);
+    color: var(--blanco);
+}
+.boton:active {
+    background-color: var(--verde-oscuro);
+}
+
+/* botón secundario */
+.boton-secundario {
+    /* estilo */
+    color: var(--rosa-oscuro);
+    background-color: var(--blanco);
+    border: 1px solid var(--rosa-oscuro);
+}
+.boton-secundario:hover {
+    background-color: var(--rosa-medio);
+}
+.boton-secundario:active {
+    background-color: var(--rosa-oscuro);
+    color: var(--blanco);
+}
+.contenedor-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 1.6rem;
+}
+.tarjeta {
+    background-color: var(--rosa-claro2);
+    grid-column: span 3;
+    height: fit-content;
+    /* ver como hacer p/ que border radius afecte tmb a la imagen */
+    box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.25);
+
+    img {
+        width: 100%;
+    }
+
+    div {
+        margin: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        p {
+            color: var(--rosa-oscuro);
+            text-align: center;
+        }
+        p:first-child{
+            font: var(--bajada-3);
+        }
+    }
+
+}
+
+
+
+
+/* ------------------------------------------------------- DISEÑO ---------------------------------------------------- */
+
+body {
+    background-color: var(--blanco);
+    font-family: "Raleway";
+}
+
+
+/* --------------- BARRA DE NAVEGACIÓN ----------------------- */
+.navbar {
+    /* quise ponerle opacidad al 50% c/ propiedad opacity y me aclaraba los textos y botones que van arriba :( ----> ver como solucionar!! */
+    background-color: var(--blanco);
+    box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.25);
+    height: 65px;
+    width: 100vw;
+    padding: 2.4rem 2.4rem 1.6rem 2.4rem;
+    gap: 3.2rem;
+    position: fixed; /* a futuro me gustaría ver de hacerla aparecer/desaparecer con el scroll */
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* usé esta estructura porque quería que los links a secciones estuvieran centrados, con los demás elementos acomodándose en el resto del espacio disponible */
+    align-items: center;
+    
+    z-index: 10000;
+
+
+    & ul {
+        justify-self: center;
+        display: flex;
+        gap: 1.6rem;
+        font-family: "Nyght Serif", serif;
+        font-size: 1.6rem;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    & .navbar-1, .navbar-3 {
+        justify-self: start;
+        display: flex;
+        align-items:center;
+        gap: 1.6rem;
+    }
+
+    & .navbar-3 {
+        justify-self: end;
+    }
+}
+/* nota: no sé cómo hacer funcionales los botones T-T */
+.icono-nav {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+/* ajusté los tamaños de los iconos para que ópticamente se perciban similares */
+.hamburguesa {
+    height: 15px;
+}
+.carrito, .cuenta {
+    height: 25px;
+}
+
+
+/* --------------- HERO SECTION ----------------------- */
+.hero {
+    padding-top: 9.6rem;
+    padding-bottom: 3.2rem;
+    height: 100vh;
+
+    & h1, p, strong {
+        color: var(--verde-medio);
+    }
+}
+/* seguramente cambie este layout a futuro */
+.pn-jardines {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: span 12;
+}
+.titulo-0 {
+    font-family: "Nyght Serif";
+    font-size: 9rem;
+    font-weight: 500;
+    font-style: italic;
+}
+.destacado-hero {
+    grid-column: 4/10;
+}
+
+
+/* --------------- ARTE Y TIERRA ----------------------- */
+.arte-y-tierra {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    background-color: var(--verde-claro2);
+
+    & p, h2 {
+        color: var(--rosa-medio);
+    }
+
+    & .contenedor-titulo {
+        grid-column: span 12;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    & .bajada-1 {
+        color: var(--rosa-oscuro);
+    }
+}
+/* próximamente sumaré más tarjetas, dentro de un contenedor que permita un scroll horizontal */
+.tarjeta-carrousel {
+    align-self: end;
+    grid-column: 3/10;
+
+    /* replico la grilla gral del contenedor para respetar las proporciones y espaciados del diseño original (donde usé una misma grilla para todo el documento) */
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    column-gap: 1.6rem;
+
+    position: relative;
+    top: 10px;
+    
+    & .titulo-2 {
+        writing-mode: sideways-lr;
+        /* ajusto para que el texto quede alineado al borde de la imagen y pegado al "gap" entre las columnas */
+        justify-self: end;
+        align-self: end;
+        line-height: 60%;
+        position: relative;
+        bottom: 40px;
+    }
+}
+.contenedor-img-boton {
+    grid-column: span 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button {
+        position: relative;
+        bottom: 25px;
+    }
+}  
+.imagen-tarjeta-carrousel {
+    width: 100%;
+}
+
+
+/* --------------- CULTIVANDO FUTURO ----------------------- */
+.cultivando-futuro {
+    padding: 6rem 6rem 8rem 6rem;
+    height: fit-content;
+
+    .jerarquia-titulo2 {
+       justify-self: center;
+       align-items: center;
+       margin-bottom: 3rem;
+
+       h2 {
+        color: var(--rosa-medio);
+       }
+
+       p {
+        color: var(--rosa-oscuro);
+       }
+    }
+ /* ver como hacer p/ que se mantenga la misma altura de tarjeta aunque tenga menos texto! */
+    .contenedor-tarjetas {
+        grid-column: span 12;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        margin: 4rem 0rem 4rem 0rem;
+        .fecha {
+            grid-column: span 3;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+
+            & > p {
+                font: var(--titulo-1);
+                color: var(--verde-medio);
+            }
+            .tarjeta {
+                width: 100%;
+                height: fit-content;
+            }
+        }
+    }
+  & .boton {
+    grid-column: 6/8;
+  }
+}
+
+
+/* --------------- TALENTO EN FLOR ----------------------- */
+.talento-en-flor {
+    background-image: url(./images/jardin-andaluz.jpg);
+    background-size: cover;
+    
+}
