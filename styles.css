@@ -57,7 +57,7 @@ Investigué por mi cuenta cómo armar variables para facilitarme el trabajo, por
     --destacado: italic 300 4rem/1.2 "Nyght Serif", serif;
     --texto-lectura: normal 400 1.1rem/1.2 "Raleway", sans-serif;
     --epigrafes: normal 300 1.2rem/1.2 "Raleway", sans-serif;
-    --botones: normal 400 1.8rem/1.2 "Raleway", sans-serif;
+    --botones: normal 400 1.6rem/1.2 "Raleway", sans-serif;
     --breadcrumb: normal 400 1rem/1.2 "Raleway", sans-serif;
 
     /* Variables de color */
@@ -160,10 +160,10 @@ p {
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    justify-self: start;
     white-space: nowrap;
     height: max-content;
-    border-radius: 21px;
+    min-width: 110px;
+    border-radius: 20px;
 
     /* estilo */
     font: var(--botones);
@@ -428,14 +428,68 @@ body {
         }
     }
   & .boton {
-    grid-column: 6/8;
+    grid-column: 1/-1;
+    justify-self: center;
   }
 }
 
 
 /* --------------- TALENTO EN FLOR ----------------------- */
+/* REVISAR ESTRUCTURA, REGLAS, ETC PLIS QUE ESTO ES UN QUILOMBOOO */
 .talento-en-flor {
     background-image: url(./images/jardin-andaluz.jpg);
     background-size: cover;
+}
+
+form {
+    background-color: var(--blanco);
+    border-radius: 10px;
     
+    height: fit-content;
+    padding: 2.5rem 2rem 2rem 2rem;
+    grid-column: 4/10;
+    
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+}
+label {
+    display: block;
+    font: var(--epigrafes);
+    font-weight: 500;
+    color: var(--verde-medio);
+    margin-top: 5px;
+}
+input::placeholder, textarea::placeholder {
+    font: var(--epigrafes);
+    font-weight: 500;
+    color: var(--rosa-medio);
+}
+
+input[type=text], input[type=email], textarea {
+    width: 100%;
+    margin: 8px 0px;
+    padding: 10px 16px;
+    display: inline-block;
+    
+    border: 1px solid var(--verde-medio);
+    background-color: var(--blanco);
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+textarea {
+    border-radius: 10px;
+}
+/* Estilizarlo bien después con JavaScript! */
+.campo-archivo input {
+    display:block;
+    margin: 8px 0px;
+}
+.contenedor-botones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    width: 100%;
+    padding-top: 5px;
 }

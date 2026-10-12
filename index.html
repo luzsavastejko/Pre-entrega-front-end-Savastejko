@@ -130,7 +130,37 @@
         </section>
 
         <section class="talento-en-flor seccion">
-            <p>meter imagen + formulario p/ participar acá</p>
+            <!--Talento en Flor
+                ¡Participá en nuestros concursos!
+                Concurso vigente: (nombre) inscripciones abiertas hasta el (fecha)
+                Descripción + alguna imagen ?
+
+                Ver anteriores/concursos anteriores/ganadores 
+
+                Form inscripción
+                Nombre y apellido
+                dni
+                campo p/ cargar imagen de la obra-->
+            <form action="https://formspree.io/f/mdeadpzn" method="post">
+
+                <!---------------Campos--------------------->
+                <label>Nombre y Apellido<input type="text" name="Nombre y Apellido" required placeholder="Camila Mendez"></label>
+                <br>
+                <label>DNI N°<input type="text" name="DNI" required placeholder="11111111"></label>
+                <br>
+                <label>Correo Electrónico<input type="email" name="Correo Electrónico" required placeholder="ejemplo@ejemplo.com"></label>
+                <br>
+                <div class="campo-archivo">
+                    <label>Cargá tu obra<input type="file" name="Obra" required></label>
+                </div>
+                <br>
+                <label>Descripción<textarea name="Descripción" rows="4" cols="50" placeholder="Contanos un poco más sobre tu obra."></textarea></label>
+                <!-----------Botones------------->
+                <div class="contenedor-botones">
+                    <input type="submit" value="Enviar" class="boton">
+                    <input type="reset" value="Borrar" class="boton boton-secundario">
+                </div>
+            </form>
         </section>
 
    </main>
